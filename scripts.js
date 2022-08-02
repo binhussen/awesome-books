@@ -12,9 +12,13 @@ displayBooks = () => {
 	container.innerHTML = "";
 	books.forEach((book) => {
 		container.innerHTML += `<div class="book">
-        <h2>${book.title}</h2>
-        <p>${book.author}</p>
-        </div>`;
+        <p><strong>${book.title}</strong></p>
+        <p><strong>${book.author}</strong></p>
+        <input type="button" value="Remove" onclick="removeBook(${books.indexOf(
+					book
+				)})">
+        </div>
+        <hr/>`;
 	});
 };
 
@@ -25,12 +29,18 @@ addBook = (e) => {
 		author: author.value,
 	};
 	books.push(newBook);
-	console.log(books);
+	clear();
+	displayBooks(books);
 };
 
 removeBook = (i) => {
-	books = books.filter((book) => book !== books[i]);
-	console.log(books);
+	books.filter((book) => book !== books[i]);
+	displayBooks();
+};
+
+clear = () => {
+	title.value = "";
+	author.value = "";
 };
 
 submit.addEventListener("click", addBook);
