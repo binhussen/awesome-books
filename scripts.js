@@ -8,26 +8,33 @@ const container = document.querySelector('.data-container');
 
 let books = [];
 
-const setLocalStorage = (books) =>
-  localStorage.setItem('books', JSON.stringify(books));
+const setLocalStorage = (books) => localStorage.setItem('books', JSON.stringify(books));
 
 const getFromLocalStorage = () => {
-  if (JSON.parse(localStorage.getItem('books')))
-    books = JSON.parse(localStorage.getItem('books'));
+  if (JSON.parse(localStorage.getItem('books'))) books = JSON.parse(localStorage.getItem('books'));
 };
 
 const displayBooks = () => {
   getFromLocalStorage();
   container.innerHTML = '';
-  books.forEach((book) => {
+  books.forEach((book, i) => {
     container.innerHTML += `<div class="book">
         <p><strong>${book.title}</strong></p>
         <p><strong>${book.author}</strong></p>
-        <input type="button" value="Remove" onclick="removeBook(${books.indexOf(
-          book
-        )})">
-        </div>
+        </div>`;
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    removeButton.classList.add('remove');
+    container.appendChild(removeButton);
+
+    container.innerHTML += `
         <hr/>`;
+
+    const removeBtn = document.querySelector('.remove');
+    removeBtn.addEventListener('click', () => {
+      // eslint-disable-next-line no-use-before-define
+      removeBook(i);
+    });
   });
 };
 
