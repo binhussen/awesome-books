@@ -8,6 +8,11 @@ const container = document.querySelector(".data-container");
 
 const books = [];
 
+setLocalStorage = (books) =>
+	localStorage.setItem("books", JSON.stringify(books));
+
+getFromLocalStorage = () => JSON.parse(localStorage.getItem("booksInfo"));
+
 displayBooks = () => {
 	container.innerHTML = "";
 	books.forEach((book) => {
