@@ -41,8 +41,8 @@ To get a local copy up and running follow these simple example steps.
 👤 Jonah Wambua (Juan Diaz)
 
 - GitHub: [@juanmanuelbyc](https://github.com/juanmanuelbyc)
-- Twitter: [@twitter](https://twitter.com)
-- LinkedIn: [LinkedIn](https://www.linkedin.com)
+- Twitter: [@twitter](https://twitter.com/juanmanueldiar)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/juan-díaz-5281b3111/)
 
 ## 🤝 Contributing
 
