@@ -8,8 +8,10 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  gap: 30px;
   align-items: center;
+  margin: 40px auto;
 }
 
 .data-container {
@@ -58,4 +60,12 @@
 
 .dateTime {
   text-align: end;
+}
+
+.NonVisible {
+  display: none;
+}
+
+.Visible {
+  display: block;
 }
