@@ -5,11 +5,13 @@ const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const submit = document.querySelector('#submit');
 const container = document.querySelector('.data-container');
-let sections = document.getElementsByClassName('container');
-const listSection = document.getElementById('listSection');
-const addNewSection = document.getElementById('addNewSection');
-const contactSection = document.getElementById('contactSection');
-const dateTime = document.getElementById('dateTime');
+const bookList = document.querySelector('.book-list');
+const addContainer = document.querySelector('.add-new');
+const contactContainer = document.querySelector('.contacts');
+const list = document.querySelector('.list');
+const addNew = document.querySelector('.add');
+const contact = document.querySelector('.contact');
+const dateTime = document.querySelector('.date');
 
 class Books {
   books;
@@ -18,7 +20,8 @@ class Books {
     this.getFromLocalStorage();
   }
 
-  setLocalStorage = (newBooks) => localStorage.setItem('books', JSON.stringify(newBooks));
+  setLocalStorage = (newBooks) =>
+    localStorage.setItem('books', JSON.stringify(newBooks));
 
   getFromLocalStorage = () => {
     this.books = JSON.parse(localStorage.getItem('books')) ?? [];
@@ -72,6 +75,22 @@ container.addEventListener('click', (e) => {
     const targetId = +e.target.getAttribute('id');
     book.removeBook(targetId);
   }
+});
+
+list.addEventListener('click', () => {
+  bookList.classList.remove('hidden');
+  addContainer.classList.add('hidden');
+  contactContainer.classList.add('hidden');
+});
+addNew.addEventListener('click', () => {
+  bookList.classList.add('hidden');
+  addContainer.classList.remove('hidden');
+  contactContainer.classList.add('hidden');
+});
+contact.addEventListener('click', () => {
+  bookList.classList.add('hidden');
+  addContainer.classList.add('hidden');
+  contactContainer.classList.remove('hidden');
 });
 
 dateTime.innerText = new Date();

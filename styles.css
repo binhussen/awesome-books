@@ -77,9 +77,13 @@ a {
   width: 20rem;
 }
 
-.contact {
+.contacts {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 40px auto;
+}
+
+.hidden {
+  display: none;
 }
