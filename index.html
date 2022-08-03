@@ -11,50 +11,68 @@
   </head>
   <body>
     <header>
-      <div class="headerContentContainer">
-          <nav class="navBar">
-            <h3 class="title">Awesome Books</h3>
-            <ul class="navLinksList">
-              <li><a href="" id="xxx">List</a></li>
-              <hr>
-              <li><a href="" onclick="displayAddNew()">Add New</a></li>
-              <hr>
-              <li><a href="" onclick="displayContact()">Contact</a></li>
-            </ul>
-          </nav>
-          <div class="dateHourContainer">
-            <h3 class="dateTime" id="dateTime"></h3>
-          </div>
+      <div class="header">
+        <h2 class="title">Awesome Books</h2>
+        <nav>
+          <ul class="nav-bar">
+            <li><a class="nav-item list" href="">List</a></li>
+            |
+            <li><a class="nav-item add" href="">Add New</a></li>
+            |
+            <li><a class="nav-item conatct" href="">Contact</a></li>
+          </ul>
+        </nav>
       </div>
+      <div class="date">try</div>
     </header>
-    <div class="container" id="ListSection">
-      <h2 class="listTitle">All awesome Books</h2>
-      <div class="data-container"></div>
-    </div>
-    <div class="container" id="AddNewSection">
-      <h2>Add a new book</h2>
-      <form class="form">
+    <main>
+      <section class="container">
+        <h2 class="listTitle">All awesome Books</h2>
+        <div class="data-container"></div>
+      </section>
+      <section class="container add-new">
+        <h2>Add a new book</h2>
+        <form class="form">
+          <div>
+            <input
+              class="field"
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Title"
+            />
+          </div>
+          <br />
+          <div>
+            <input
+              class="field"
+              type="text"
+              name="author"
+              id="author"
+              placeholder="Author"
+            />
+          </div>
+          <br />
+          <input class="btn" id="submit" type="submit" value="Add" />
+        </form>
+      </section>
+      <section class="container contact">
+        <h2>Contact Information</h2>
         <div>
-          <input type="text" name="title" id="title" placeholder="Title" />
+          <p>Do you have any questions or you just want to say "Hello"?</p>
+          <p>You can reach out to us!</p>
         </div>
-        <br />
-        <div>
-          <input type="text" name="author" id="author" placeholder="Author" />
-        </div>
-        <br />
-        <input class="btn" id="submit" type="submit" value="Add" />
-      </form>
-    </div>
-    <div class="container" id="ContactSection">
-      <h2>Contact Information</h2>
-      <p class="contactText">xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx v</p>
-      <h4>You can reach out to us!</h4>
-      <ul>
-        <li><span>xxxxxxxxxxxxxxx</span></li>
-        <li><span>xxxxxxxxxxxxxxx</span></li>
-        <li><span>xxxxxxxxxxxxxxx</span></li>
-      </ul>
-    </div>
+        <ul>
+          <li>
+            email:
+            <a href="mailto:binhussens@gmail.com">binhussens@gmail.com</a>
+          </li>
+          <li>phone number: <a href="tel:+251923692424">++251923692424</a></li>
+          <li>Address: Bole 2, 8450 Addis Ababa, Ethiopia</li>
+        </ul>
+      </section>
+    </main>
+    <footer></footer>
     <script src="scripts.js"></script>
   </body>
 </html>
