@@ -7,23 +7,24 @@ const submit = document.querySelector('#submit');
 const container = document.querySelector('.data-container');
 
 class Books {
+  books;
+
   constructor(title, author) {
     this.title = title;
     this.author = author;
+    this.getFromLocalStorage();
   }
 
-  setLocalStorage = (books) =>
-    localStorage.setItem('books', JSON.stringify(books));
+  setLocalStorage = (newBooks) =>
+    localStorage.setItem('books', JSON.stringify(newBooks));
 
   getFromLocalStorage = () => {
-    if (JSON.parse(localStorage.getItem('books')))
-      books = JSON.parse(localStorage.getItem('books'));
+    this.books = JSON.parse(localStorage.getItem('books')) ?? [];
   };
 
   displayBooks = () => {
-    getFromLocalStorage();
     container.innerHTML = '';
-    books.forEach((book, i) => {
+    this.books.forEach((book, i) => {
       container.innerHTML += `<div class="book">
         <p><strong>${book.title}</strong></p>
         <p><strong>${book.author}</strong></p>
@@ -33,13 +34,12 @@ class Books {
       removeButton.classList.add('remove');
       container.appendChild(removeButton);
 
-      container.innerHTML += `
-        <hr/>`;
+      container.innerHTML += '<hr/>';
 
       const removeBtn = document.querySelector('.remove');
       removeBtn.addEventListener('click', () => {
         // eslint-disable-next-line no-use-before-define
-        removeBook(i);
+        this.removeBook(i);
       });
     });
   };
@@ -50,16 +50,16 @@ class Books {
       title: title.value,
       author: author.value,
     };
-    books.push(newBook);
-    clear();
-    setLocalStorage(books);
-    displayBooks();
+    this.books.push(newBook);
+    this.clear();
+    this.setLocalStorage(this.books);
+    this.displayBooks();
   };
 
   removeBook = (i) => {
-    const filteredBooks = books.filter((book) => book !== books[i]);
-    setLocalStorage(filteredBooks);
-    displayBooks();
+    const filteredBooks = this.books.filter((book) => book !== this.books[i]);
+    this.setLocalStorage(filteredBooks);
+    this.displayBooks();
   };
 
   clear = () => {
@@ -67,3 +67,9 @@ class Books {
     author.value = '';
   };
 }
+
+const book = new Books();
+
+document.addEventListener('DOMContentLoaded', () => {
+  book.displayBooks();
+});
