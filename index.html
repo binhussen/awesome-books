@@ -10,8 +10,23 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <header>
+      <div class="headerContentContainer">
+          <nav class="navBar">
+            <h3 class="title">Awesome Books</h3>
+            <ul>
+              <li><a href="" onclick="displayList()">List</a></li>
+              <li><a href="" onclick="displayAddNew()">Add New</a></li>
+              <li><a href="" onclick="displayContact()">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="dateHourContainer">
+            <h3 class="dateHourText"></h3>
+          </div>
+      </div>
+    </header>
     <div class="container">
-      <h1 class="title">Awesome Books</h1>
+      <h1 class="listTitle">All awesome Books</h1>
       <div class="data-container"></div>
       <hr class="hr" />
       <form class="form">
