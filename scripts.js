@@ -10,8 +10,8 @@ class Books {
   books;
 
   constructor(title, author) {
-    this.title = title;
-    this.author = author;
+    // this.title = title;
+    // this.author = author;
     this.getFromLocalStorage();
   }
 
@@ -73,3 +73,5 @@ const book = new Books();
 document.addEventListener('DOMContentLoaded', () => {
   book.displayBooks();
 });
+
+submit.addEventListener('click', book.addBook);
