@@ -10,23 +10,69 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <h1 class="title">Awesome Books</h1>
-      <div class="data-container"></div>
-      <hr class="hr" />
-      <form class="form">
+    <header>
+      <div class="header">
+        <h2 class="title">Awesome Books</h2>
+        <nav>
+          <ul class="nav-bar">
+            <li class="nav-item list">List</li>
+            <li>|</li>
+            <li class="nav-item add">Add New</li>
+            <li>|</li>
+            <li class="nav-item contact">Contact</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="date">try</div>
+    </header>
+    <main>
+      <section class="container book-list">
+        <h2 class="listTitle">All awesome Books</h2>
+        <div class="data-container"></div>
+      </section>
+      <section class="container add-new hidden">
         <h2>Add a new book</h2>
+        <form class="form">
+          <div>
+            <input
+              class="field"
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Title"
+            />
+          </div>
+          <br />
+          <div>
+            <input
+              class="field"
+              type="text"
+              name="author"
+              id="author"
+              placeholder="Author"
+            />
+          </div>
+          <br />
+          <input class="btn" id="submit" type="submit" value="Add" />
+        </form>
+      </section>
+      <section class="container contacts hidden">
+        <h2>Contact Information</h2>
         <div>
-          <input type="text" name="title" id="title" placeholder="Title" />
+          <p>Do you have any questions or you just want to say "Hello"?</p>
+          <p>You can reach out to us!</p>
         </div>
-        <br />
-        <div>
-          <input type="text" name="author" id="author" placeholder="Author" />
-        </div>
-        <br />
-        <input class="btn" id="submit" type="submit" value="Add" />
-      </form>
-    </div>
+        <ul>
+          <li>
+            email:
+            <a href="mailto:binhussens@gmail.com">binhussens@gmail.com</a>
+          </li>
+          <li>phone number: <a href="tel:+251923692424">++251923692424</a></li>
+          <li>Address: Bole 2, 8450 Addis Ababa, Ethiopia</li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">Copyright ...</footer>
     <script src="scripts.js"></script>
   </body>
 </html>

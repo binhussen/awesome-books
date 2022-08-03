@@ -5,6 +5,13 @@ const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const submit = document.querySelector('#submit');
 const container = document.querySelector('.data-container');
+const bookList = document.querySelector('.book-list');
+const addContainer = document.querySelector('.add-new');
+const contactContainer = document.querySelector('.contacts');
+const list = document.querySelector('.list');
+const addNew = document.querySelector('.add');
+const contact = document.querySelector('.contact');
+const dateTime = document.querySelector('.date');
 
 class Books {
   books;
@@ -68,3 +75,20 @@ container.addEventListener('click', (e) => {
     book.removeBook(targetId);
   }
 });
+
+list.addEventListener('click', () => {
+  bookList.classList.remove('hidden');
+  addContainer.classList.add('hidden');
+  contactContainer.classList.add('hidden');
+});
+addNew.addEventListener('click', () => {
+  bookList.classList.add('hidden');
+  addContainer.classList.remove('hidden');
+  contactContainer.classList.add('hidden');
+});
+contact.addEventListener('click', () => {
+  bookList.classList.add('hidden');
+  addContainer.classList.add('hidden');
+  contactContainer.classList.remove('hidden');
+});
+dateTime.textContent = new Date();
