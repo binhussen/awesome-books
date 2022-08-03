@@ -10,19 +10,23 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Awesome Books</h1>
-    <div class="data-container"></div>
-    <form>
-      <div>
-        <input type="text" name="title" id="title" placeholder="Title" />
-      </div>
-      <br />
-      <div>
-        <input type="text" name="author" id="author" placeholder="Author" />
-      </div>
-      <br />
-      <input id="submit" type="submit" value="Add" />
-    </form>
+    <div class="container">
+      <h1 class="title">Awesome Books</h1>
+      <div class="data-container"></div>
+      <hr class="hr" />
+      <form class="form">
+        <h2>Add a new book</h2>
+        <div>
+          <input type="text" name="title" id="title" placeholder="Title" />
+        </div>
+        <br />
+        <div>
+          <input type="text" name="author" id="author" placeholder="Author" />
+        </div>
+        <br />
+        <input class="btn" id="submit" type="submit" value="Add" />
+      </form>
+    </div>
     <script src="scripts.js"></script>
   </body>
 </html>

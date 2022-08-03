@@ -6,63 +6,65 @@ const author = document.querySelector('#author');
 const submit = document.querySelector('#submit');
 const container = document.querySelector('.data-container');
 
-let books = [];
+class Books {
+  books;
 
-const setLocalStorage = (books) => localStorage.setItem('books', JSON.stringify(books));
+  constructor() {
+    this.getFromLocalStorage();
+  }
 
-const getFromLocalStorage = () => {
-  if (JSON.parse(localStorage.getItem('books'))) books = JSON.parse(localStorage.getItem('books'));
-};
+  setLocalStorage = (newBooks) => localStorage.setItem('books', JSON.stringify(newBooks));
 
-const displayBooks = () => {
-  getFromLocalStorage();
-  container.innerHTML = '';
-  books.forEach((book, i) => {
-    container.innerHTML += `<div class="book">
-        <p><strong>${book.title}</strong></p>
-        <p><strong>${book.author}</strong></p>
-        </div>`;
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'Remove';
-    removeButton.classList.add('remove');
-    container.appendChild(removeButton);
-
-    container.innerHTML += `
-        <hr/>`;
-
-    const removeBtn = document.querySelector('.remove');
-    removeBtn.addEventListener('click', () => {
-      // eslint-disable-next-line no-use-before-define
-      removeBook(i);
-    });
-  });
-};
-
-const clear = () => {
-  title.value = '';
-  author.value = '';
-};
-
-const addBook = (e) => {
-  e.preventDefault();
-  const newBook = {
-    title: title.value,
-    author: author.value,
+  getFromLocalStorage = () => {
+    this.books = JSON.parse(localStorage.getItem('books')) ?? [];
   };
-  books.push(newBook);
-  clear();
-  setLocalStorage(books);
-  displayBooks();
-};
 
-const removeBook = (i) => {
-  const filteredBooks = books.filter((book) => book !== books[i]);
-  setLocalStorage(filteredBooks);
-  displayBooks();
-};
+  displayBooks = () => {
+    this.getFromLocalStorage();
+    container.innerHTML = '';
+    this.books.forEach((book, i) => {
+      container.innerHTML += `<div class="book">
+          <p><q>${book.title}</q> by ${book.author}</p>
+          <button class="remove btn" id=${i}>Remove</button>
+        </div>`;
+    });
+  };
 
-submit.addEventListener('click', addBook);
+  addBook = (e) => {
+    e.preventDefault();
+    const newBook = {
+      title: title.value,
+      author: author.value,
+    };
+    this.books.push(newBook);
+    this.clear();
+    this.setLocalStorage(this.books);
+    this.displayBooks();
+  };
+
+  removeBook = (i) => {
+    const filteredBooks = this.books.filter((book) => book !== this.books[i]);
+    this.setLocalStorage(filteredBooks);
+    this.displayBooks();
+  };
+
+  clear = () => {
+    title.value = '';
+    author.value = '';
+  };
+}
+
+const book = new Books();
 
 document.addEventListener('DOMContentLoaded', () => {
-  displayBooks();
+  book.displayBooks();
+});
+
+submit.addEventListener('click', book.addBook);
+
+container.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove')) {
+    const targetId = +e.target.getAttribute('id');
+    book.removeBook(targetId);
+  }
 });

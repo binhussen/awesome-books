@@ -2,4 +2,52 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-container {
+  border: 3px solid #000;
+  border-radius: 3px;
+  width: 30rem;
+}
+
+.book {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.book:nth-child(odd) {
+  background: #dee2e6;
+}
+
+.btn {
+  box-shadow: 5px 5px 2px #000;
+  border: 3px solid #000;
+  border-radius: 3px;
+  padding: 3px 10px;
+}
+
+.hr {
+  margin: 30px;
+  height: 0.3rem;
+  background-color: #000;
+  width: 10rem;
+}
+
+.title {
+  color: blue;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+  color: blue;
+  font-family: 'Courier New', Courier, monospace;
 }
