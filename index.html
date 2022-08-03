@@ -10,12 +10,30 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <h1 class="title">Awesome Books</h1>
+    <header>
+      <div class="headerContentContainer">
+          <nav class="navBar">
+            <h3 class="title">Awesome Books</h3>
+            <ul class="navLinksList">
+              <li><a href="" id="xxx">List</a></li>
+              <hr>
+              <li><a href="" onclick="displayAddNew()">Add New</a></li>
+              <hr>
+              <li><a href="" onclick="displayContact()">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="dateHourContainer">
+            <h3 class="dateTime" id="dateTime"></h3>
+          </div>
+      </div>
+    </header>
+    <div class="container" id="ListSection">
+      <h2 class="listTitle">All awesome Books</h2>
       <div class="data-container"></div>
-      <hr class="hr" />
+    </div>
+    <div class="container" id="AddNewSection">
+      <h2>Add a new book</h2>
       <form class="form">
-        <h2>Add a new book</h2>
         <div>
           <input type="text" name="title" id="title" placeholder="Title" />
         </div>
@@ -26,6 +44,16 @@
         <br />
         <input class="btn" id="submit" type="submit" value="Add" />
       </form>
+    </div>
+    <div class="container" id="ContactSection">
+      <h2>Contact Information</h2>
+      <p class="contactText">xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxx xxxx v</p>
+      <h4>You can reach out to us!</h4>
+      <ul>
+        <li><span>xxxxxxxxxxxxxxx</span></li>
+        <li><span>xxxxxxxxxxxxxxx</span></li>
+        <li><span>xxxxxxxxxxxxxxx</span></li>
+      </ul>
     </div>
     <script src="scripts.js"></script>
   </body>

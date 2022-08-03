@@ -8,8 +8,10 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  gap: 30px;
   align-items: center;
+  margin: 40px auto;
 }
 
 .data-container {
@@ -42,12 +44,28 @@
   width: 10rem;
 }
 
-.title {
-  color: blue;
-  font-family: 'Courier New', Courier, monospace;
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-style: solid;
+  border-color: black;
 }
 
-h2 {
+.navLinksList {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+.dateTime {
+  text-align: end;
+}
+
+.nonVisible {
+  display: none !important;
+}
+
+.colorBlue {
   color: blue;
-  font-family: 'Courier New', Courier, monospace;
 }
