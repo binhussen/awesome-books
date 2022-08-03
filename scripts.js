@@ -27,16 +27,9 @@ class Books {
     container.innerHTML = '';
     this.books.forEach((book, i) => {
       container.innerHTML += `<div class="book">
-        <p><strong>${book.title}</strong></p>
-        <p><strong>${book.author}</strong></p>
+          <p><q>${book.title}</q> by ${book.author}</p>
+          <button class="remove" id=${i}>Remove</button>
         </div>`;
-      const removeButton = document.createElement('button');
-      removeButton.textContent = 'Remove';
-      removeButton.classList.add('remove');
-      removeButton.setAttribute('id', i);
-      container.appendChild(removeButton);
-
-      container.innerHTML += '<hr/>';
     });
   };
 
