@@ -13,8 +13,7 @@ class Books {
     this.getFromLocalStorage();
   }
 
-  setLocalStorage = (newBooks) =>
-    localStorage.setItem('books', JSON.stringify(newBooks));
+  setLocalStorage = (newBooks) => localStorage.setItem('books', JSON.stringify(newBooks));
 
   getFromLocalStorage = () => {
     this.books = JSON.parse(localStorage.getItem('books')) ?? [];
