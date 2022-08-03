@@ -23,6 +23,7 @@ class Books {
   };
 
   displayBooks = () => {
+    this.getFromLocalStorage();
     container.innerHTML = '';
     this.books.forEach((book, i) => {
       container.innerHTML += `<div class="book">
@@ -32,15 +33,10 @@ class Books {
       const removeButton = document.createElement('button');
       removeButton.textContent = 'Remove';
       removeButton.classList.add('remove');
+      removeButton.setAttribute('id', i);
       container.appendChild(removeButton);
 
       container.innerHTML += '<hr/>';
-
-      const removeBtn = document.querySelector('.remove');
-      removeBtn.addEventListener('click', () => {
-        // eslint-disable-next-line no-use-before-define
-        this.removeBook(i);
-      });
     });
   };
 
@@ -75,3 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 submit.addEventListener('click', book.addBook);
+
+container.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove')) {
+    const targetId = +e.target.getAttribute('id');
+    book.removeBook(targetId);
+  }
+});
