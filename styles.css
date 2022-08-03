@@ -46,4 +46,16 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  border-style: solid;
+  border-color: black;
+}
+
+.navLinksList {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+.dateTime {
+  text-align: end;
 }
