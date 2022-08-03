@@ -41,3 +41,13 @@
   background-color: #000;
   width: 10rem;
 }
+
+.title {
+  color: blue;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+  color: blue;
+  font-family: 'Courier New', Courier, monospace;
+}

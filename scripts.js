@@ -9,9 +9,7 @@ const container = document.querySelector('.data-container');
 class Books {
   books;
 
-  constructor(title, author) {
-    // this.title = title;
-    // this.author = author;
+  constructor() {
     this.getFromLocalStorage();
   }
 
