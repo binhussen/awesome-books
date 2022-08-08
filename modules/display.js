@@ -1,9 +1,8 @@
-import getFromLocalStorage from './local_storage.js';
-import container from './selector.js';
+import { getFromLocalStorage } from './local_storage.js';
+import { container } from './selector.js';
 
-const books = getFromLocalStorage();
-
-const displayBooks = () => {
+export const displayBooks = () => {
+  const books = getFromLocalStorage();
   container.innerHTML = '';
   books.forEach((book, i) => {
     container.innerHTML += `<div class="book">

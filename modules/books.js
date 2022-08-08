@@ -1,6 +1,6 @@
-import { setLocalStorage, getFromLocalStorage } from './local_storage';
-import { title, author } from './selector';
-import displayBooks from './display';
+import { setLocalStorage, getFromLocalStorage } from './local_storage.js';
+import { title, author } from './selector.js';
+import { displayBooks } from './display.js';
 
 export default class Books {
   books;
@@ -22,6 +22,7 @@ export default class Books {
   };
 
   removeBook = (i) => {
+    this.books = getFromLocalStorage();
     const filteredBooks = this.books.filter((book) => book !== this.books[i]);
     setLocalStorage(filteredBooks);
     displayBooks();
