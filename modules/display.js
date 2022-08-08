@@ -1,10 +1,16 @@
-export const displayBooks = () => {
-  this.getFromLocalStorage();
+import getFromLocalStorage from './local_storage.js';
+import container from './selector.js';
+
+const books = getFromLocalStorage();
+
+const displayBooks = () => {
   container.innerHTML = '';
-  this.books.forEach((book, i) => {
+  books.forEach((book, i) => {
     container.innerHTML += `<div class="book">
-          <p><q>${book.title}</q> by ${book.author}</p>
-          <button class="remove btn" id=${i}>Remove</button>
-        </div>`;
+                <p><q>${book.title}</q> by ${book.author}</p>
+                <button class="remove btn" id=${i}>Remove</button>
+              </div>`;
   });
 };
+
+export default displayBooks;
