@@ -1,5 +1,6 @@
 import Books from './modules/books.js';
 import { displayBooks } from './modules/display.js';
+import { luxon } from './modules/luxon.js';
 import {
   addContainer,
   addNew,
@@ -9,6 +10,7 @@ import {
   container,
   list,
   submit,
+  dateTime,
 } from './modules/selector.js';
 
 const book = new Books();
@@ -41,3 +43,12 @@ contact.addEventListener('click', () => {
   addContainer.classList.add('hidden');
   contactContainer.classList.remove('hidden');
 });
+
+const setTime = () => {
+  dateTime.innerHTML = luxon.DateTime.now().toLocaleString(
+    luxon.DateTime.DATETIME_MED_WITH_SECONDS,
+  );
+  setTimeout(setTime, 1000);
+};
+
+setTime();
